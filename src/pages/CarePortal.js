@@ -38,18 +38,23 @@ export default function CarePortal() {
     };
 
     recognition.onresult = async (event) => {
-      const transcribedText = event.results[0][0].transcript;
+      const transcribedText = await event.results[0][0].transcript;
 
+      console.log("HLEKJFD" + transcribedText);
       // pass trascribed text to the model
       const result = await fetch("http://localhost:3001/", {
         method: "POST",
-        body: transcribedText,
+        headers: {
+          "Content-Type": "application/json", // Indicate that we're sending JSON data
+        },
+        body: JSON.stringify({ text: transcribedText }), // Convert the payload to a JSON string
       });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (!result.ok) {
+        throw new Error(`HTTP error! status: ${result.status}`);
       }
 
-      const data = await response.json(); // This is how you parse the JSON response
+      const data = await result.json(); // This is how you parse the JSON response
+      console.log(data);
       console.log("Server response:", data);
 
       // Assuming the server sends back a JSON object that you want to speak
