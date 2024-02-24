@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import Home from "./pages/Home";
+import CarePortal from "./pages/CarePortal";
 
 const GetSpeech = () => {
   console.log("clicked microphone");
@@ -51,13 +52,17 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/speech-recognition">Speech Recognition</Link>
+            <Link to="/carePortal">Care Portal</Link>
+          </li>
+          <li>
+            <Link to="/CarePortal">Care Portal</Link>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/speech-recognition" element={<SpeechRecognitionPage />} />
+        <Route path="/carePortal" element={<CarePortal />} />
       </Routes>
     </Router>
   );
