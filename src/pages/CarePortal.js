@@ -17,7 +17,9 @@ export default function CarePortal() {
             <h2 className="text-center mb-4 wellbeing-header"><FontAwesomeIcon icon={faSmile} /> Wellbeing Functions</h2>
             <button className="btn btn-primary btn-block mb-2 wellbeing-button"><FontAwesomeIcon icon={faLaugh} /> Send a Joke</button>
             <button className="btn btn-primary btn-block mb-2 wellbeing-button"><FontAwesomeIcon icon={faBrain} /> Prompt for Mental Health Check-up</button>
-            <button className="btn btn-primary btn-block wellbeing-button"><FontAwesomeIcon icon={faLightbulb} /> Tell a Random Fact</button>
+            <button className="btn btn-primary btn-block mb-2 wellbeing-button"><FontAwesomeIcon icon={faLightbulb} /> Tell a Random Fact</button>
+            <button className="btn btn-primary btn-block mb-2 wellbeing-button"><FontAwesomeIcon icon={faWalking} /> Recommend Outdoor Activity</button>
+            <button className="btn btn-primary btn-block wellbeing-button">Positive Affirmation</button>
           </div>
         </div>
 
@@ -40,7 +42,8 @@ export default function CarePortal() {
 
             <p className="mb-1 reminders-info"><FontAwesomeIcon icon={faExclamationCircle} /> Other reminders:</p>
             <ul className="list-unstyled reminders-list">
-              <li><button className="btn btn-primary btn-block wellbeing-button"><FontAwesomeIcon icon={faWalking} /> It's time to go for your daily walk.</button></li>
+              <li><button className="btn btn-primary btn-block mb-2 wellbeing-button"><FontAwesomeIcon icon={faWalking} /> It's time to go for your daily walk.</button></li>
+              <li><button className="btn btn-primary btn-block mb-2 wellbeing-button">Schedule Doctor's Appointment</button></li>
               {/* Add more reminders as needed */}
             </ul>
           </div>
