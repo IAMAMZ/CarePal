@@ -1,8 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-const { CohereClient } = require("cohere-ai");
-
 const GetSpeech = () => {
   console.log("clicked microphone");
   const SpeechRecognition =
@@ -18,40 +16,48 @@ const GetSpeech = () => {
     recognition.stop();
   };
   recognition.onresult = async (result) => {
-    const cohere = new CohereClient({
-      token: "Ln7VwcdZMEZkvCOTDyHnZ7LxBbSjxTkaGwQzfGf4",
-    });
-
-    (async () => {
-      const chatStream = await cohere.chatStream({
-        chatHistory: [
-          { role: "USER", message: "Who discovered gravity?" },
-          {
-            role: "CHATBOT",
-            message:
-              "The man who is widely credited with discovering gravity is Sir Isaac Newton",
-          },
-        ],
-        message: "What year was he born?",
-        // perform web search before answering the question. You can also use your own custom connector.
-        connectors: [{ id: "web-search" }],
-      });
-
-      for await (const message of chatStream) {
-        if (message.eventType === "text-generation") {
-          console.log(message);
-        }
-      }
-    })();
-
-    //console.log(result.results[0][0].transcript);
+    console.log(result.results[0][0].transcript);
   };
 
   recognition.start();
 };
 function App() {
+  const handleChange = async (e) => {
+    const medicationName = e.target.value; // Correctly accessing the input's current value
+
+    console.log(medicationName);
+
+    try {
+      // Setup the fetch request
+      const response = await fetch("http://localhost:3001/", {
+        method: "POST", // Assuming you're sending data, POST is commonly used
+        headers: {
+          "Content-Type": "application/json", // Set the content type to JSON
+        },
+        body: JSON.stringify({ medicationName }), // Stringify your payload
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response;
+      console.log(data); // Handling the response data
+    } catch (error) {
+      console.error("There was a problem with your fetch operation:", error);
+    }
+  };
+
   return (
     <div>
+      <label>Medication Name</label>
+      <input
+        type="text"
+        id="medicationName"
+        autoComplete="off"
+        onChange={handleChange}
+        required
+      />
       <button onClick={GetSpeech}>Get speech</button>
     </div>
   );
