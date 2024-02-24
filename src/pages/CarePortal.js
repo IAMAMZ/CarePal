@@ -1,6 +1,6 @@
 // CarePortal.js
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeartbeat,
@@ -18,6 +18,60 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./CarePortal.css";
 
 export default function CarePortal() {
+  const inputRef = useRef();
+  const [transcript, setTranscript] = useState("");
+
+  // Function to start speech recognition and update transcript state
+  const startSpeechRecognition = () => {
+    console.log("clicked microphone");
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = new SpeechRecognition();
+
+    recognition.onstart = () => {
+      console.log("Voice recognition started. Speak into the microphone.");
+    };
+
+    recognition.onspeechend = () => {
+      recognition.stop();
+      console.log("Voice recognition stopped.");
+    };
+
+    recognition.onresult = async (event) => {
+      const transcribedText = event.results[0][0].transcript;
+
+      // pass trascribed text to the model
+      const result = await fetch("http://localhost:3001/", {
+        method: "POST",
+        body: transcribedText,
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json(); // This is how you parse the JSON response
+      console.log("Server response:", data);
+
+      // Assuming the server sends back a JSON object that you want to speak
+      speakText("Server says " + data.message); // Use the parsed datan
+    };
+
+    recognition.start();
+  };
+
+  // Function to speak the text
+  const speakText = (text) => {
+    let synth = window.speechSynthesis;
+    let utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  };
+
+  // Function to handle button click for speaking out the medication input or recognized text
+  const handleMedicationButtonClick = () => {
+    const medicationValue = inputRef.current.value;
+    speakText(medicationValue); // Speak out the medication value
+  };
+
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4 care-portal-header">
@@ -33,7 +87,10 @@ export default function CarePortal() {
             <button className="btn btn-primary btn-block mb-2 wellbeing-button">
               <FontAwesomeIcon icon={faLaugh} /> Send a Joke
             </button>
-            <button className="btn btn-primary btn-block mb-2 wellbeing-button">
+            <button
+              onClick={startSpeechRecognition}
+              className="btn btn-primary btn-block mb-2 wellbeing-button"
+            >
               <FontAwesomeIcon icon={faBrain} /> Prompt for Mental Health
               Check-up
             </button>
@@ -63,10 +120,14 @@ export default function CarePortal() {
                 id="medicationInput"
                 className="form-control mb-2 reminders-input"
                 placeholder="Enter medication"
+                ref={inputRef}
               />
             </div>
 
-            <button className="btn btn-success btn-block mb-2 reminders-button">
+            <button
+              onClick={handleMedicationButtonClick}
+              className="btn btn-success btn-block mb-2 reminders-button"
+            >
               <FontAwesomeIcon icon={faCheckCircle} /> Did you take your
               medications?
             </button>
