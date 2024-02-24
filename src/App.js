@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
+const GetSpeech = () => {
+  console.log("clicked microphone");
+  const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  let recognition = new SpeechRecognition();
+
+  recognition.onstart = () => {
+    console.log("starting listening, speak in microphone");
+  };
+  recognition.onspeechend = () => {
+    console.log("stopped listening");
+    recognition.stop();
+  };
+  recognition.onresult = (result) => {
+    console.log(result.results[0][0].transcript);
+  };
+
+  recognition.start();
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={GetSpeech}>Get speech</button>
     </div>
   );
 }
