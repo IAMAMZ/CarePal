@@ -22,9 +22,7 @@ export default function CarePortal() {
   const [transcript, setTranscript] = useState("");
 
   // Function to start speech recognition and update transcript state
-  const startSpeechRecognition = () => {
-    console.log("clicked microphone");
-    speakText("hey how was your day?");
+  const startSpeechRecognition = async (url, prompt) => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     let recognition = new SpeechRecognition();
@@ -43,7 +41,7 @@ export default function CarePortal() {
 
       console.log("HLEKJFD" + transcribedText);
       // pass trascribed text to the model
-      const result = await fetch("http://localhost:3001/mentalHealth", {
+      const result = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Indicate that we're sending JSON data
@@ -59,7 +57,7 @@ export default function CarePortal() {
       console.log("Server response:", data);
 
       // Assuming the server sends back a JSON object that you want to speak
-      speakText("Care Pal says " + data.message); // Use the parsed datan
+      speakText(data.message); // Use the parsed datan
     };
 
     recognition.start();
@@ -81,20 +79,23 @@ export default function CarePortal() {
   return (
     <div className="container-mt-5">
       <h2 className="text-center mb-4 care-portal-header" id="header-portal">
-         Care Portal
+        Care Portal
       </h2>
 
       <div className="row">
         <div className="col-md-6">
           <div className="card wellbeing-card card-item-custom" id="card-size">
             <h2 className="text-center mb-4 wellbeing-header">
-            <FontAwesomeIcon icon={faHeartbeat} /> Wellbeing Functions
+              <FontAwesomeIcon icon={faHeartbeat} /> Wellbeing Functions
             </h2>
             <button className="btn btn-primary btn-block mb-2 wellbeing-button">
               <FontAwesomeIcon icon={faLaugh} /> Send a Joke
             </button>
             <button
-              onClick={startSpeechRecognition}
+              onClick={() => {
+                speakText("how was your day?");
+                startSpeechRecognition("http://localhost:3001/general");
+              }}
               className="btn btn-primary btn-block mb-2 wellbeing-button"
             >
               <FontAwesomeIcon icon={faBrain} /> Prompt for Mental Health
@@ -113,7 +114,7 @@ export default function CarePortal() {
         </div>
 
         <div className="col-md-6 ">
-          <div className="card reminders-card card-item-custom" id="card-size1" >
+          <div className="card reminders-card card-item-custom" id="card-size1">
             <h2 className="text-center mb-4 reminders-header">
               <FontAwesomeIcon icon={faBell} /> Reminders
             </h2>
@@ -131,7 +132,10 @@ export default function CarePortal() {
             </div>
 
             <button
-              onClick={handleMedicationButtonClick}
+              onClick={() => {
+                speakText("Did you take your medication today?");
+                startSpeechRecognition("http://localhost:3001/firstresponse");
+              }}
               className="btn btn-success btn-block mb-2 reminders-button"
             >
               <FontAwesomeIcon icon={faCheckCircle} /> Did you take your
