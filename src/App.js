@@ -1,20 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: "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",
-  dangerouslyAllowBrowser: true,
-});
-
-async function main() {
-  console.log(completion.choices[0]);
-}
-main();
-
-// const configuration = new Configuration({
-//   apiKey: "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",
-// });
+const { CohereClient } = require("cohere-ai");
 
 const GetSpeech = () => {
   console.log("clicked microphone");
@@ -31,19 +18,31 @@ const GetSpeech = () => {
     recognition.stop();
   };
   recognition.onresult = async (result) => {
-    // send request to open AI
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: "Translate the following English text to French: 'Hello, world!'",
-      temperature: 0.7,
-      max_tokens: 60,
-      top_p: 1.0,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.0,
+    const cohere = new CohereClient({
+      token: "Ln7VwcdZMEZkvCOTDyHnZ7LxBbSjxTkaGwQzfGf4",
     });
 
-    // get response
-    console.log(response.data.choices[0].text.trim());
+    (async () => {
+      const chatStream = await cohere.chatStream({
+        chatHistory: [
+          { role: "USER", message: "Who discovered gravity?" },
+          {
+            role: "CHATBOT",
+            message:
+              "The man who is widely credited with discovering gravity is Sir Isaac Newton",
+          },
+        ],
+        message: "What year was he born?",
+        // perform web search before answering the question. You can also use your own custom connector.
+        connectors: [{ id: "web-search" }],
+      });
+
+      for await (const message of chatStream) {
+        if (message.eventType === "text-generation") {
+          console.log(message);
+        }
+      }
+    })();
 
     //console.log(result.results[0][0].transcript);
   };
