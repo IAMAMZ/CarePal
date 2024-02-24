@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./shared/Navbar";
 import Home from "./pages/Home";
 import CarePortal from "./pages/CarePortal";
+import logo from './images/Careicon2.png';
 
 const GetSpeech = () => {
   console.log("clicked microphone");
@@ -38,7 +39,8 @@ function App() {
       {/* <Navbar /> */}
       <nav className='home-nav'>
         <div className='nav-bar-1'>
-          <div className='company-title'>CarePal</div>
+          {/* <div className='company-title'>CarePal</div> */}
+          <img src={logo} alt="Logo" width={100} height={100} />
         </div> 
         <div className='nav-bar-2'>
           <Link to="/" className="nav-link">Home</Link>
