@@ -1,3 +1,215 @@
-body{
-    background-color: red;
+.home-page{
+    background-color: #edede8;
+    width: 100%t;
+}
+.home-nav{
+    background-color: #003366;
+    display: flex;
+    padding: 2em 4em;
+    justify-content: space-between;
+}
+
+.company-title{
+    color: white;
+    font-size: 200%;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-bar-2{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 0.8em;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-bar-3{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+}
+
+.login{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #003366;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.register{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.start-section{
+    height: 20em;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 15em; 
+}
+
+.headline{
+    font-size: 300%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.subheading{
+    font-size: 120%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 2em 4em;
+}
+
+.section-buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.get-started{
+    background-color: #FF6F61;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+.learn-more{
+    margin-top: 15px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    padding: 2em 4em;
+    background-color:#4f7cad;
+}
+
+.key-features{
+    font-size: 220%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.feature-description{
+    padding-top: 1em;
+    font-size: 120%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.all-features{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature-1{
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px 70px 20px 40px;
+    color: white;
+}
+
+.feature-1-title{
+    font-size: large;
+    font-weight: 500;
+    padding: 1em;
+}
+
+.feature-1-content{
+    padding-left: 1em;
+}
+
+.feature-2{
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px;
+    color: white;
+}
+
+.feature-2-title{
+    font-size: large;
+    font-weight: 500;
+    padding: 1em;
+}
+
+.feature-2-content{
+    padding-left: 1em;
+}
+
+.feature-3{
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px 70px 20px 40px;
+    color: white;
+}
+
+.feature-3-title{
+    font-size: large;
+    font-weight: 500;
+    padding: 1em;
+}
+
+.feature-3-content{
+    padding-left: 1em;
+}
+
+.feature-4{
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px;
+    color: white;
+}
+
+.feature-4-title{
+    font-size: large;
+    font-weight: 500;
+    padding: 1em;
+}
+
+.feature-4-content{
+    padding-left: 1em;
 }
