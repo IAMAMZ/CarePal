@@ -1,13 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
-const { Configuration, OpenAIApi } = require("openai");
+import OpenAI from "openai";
 
-require("dotenv").config();
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: "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",
+  dangerouslyAllowBrowser: true,
 });
 
-const openai = new OpenAIApi(configuration);
+async function main() {
+  console.log(completion.choices[0]);
+}
+main();
+
+// const configuration = new Configuration({
+//   apiKey: "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",
+// });
 
 const GetSpeech = () => {
   console.log("clicked microphone");
