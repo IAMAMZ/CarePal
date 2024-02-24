@@ -35,7 +35,23 @@ const SpeechRecognitionPage = () => {
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
+      <nav className='home-nav'>
+        <div className='nav-bar-1'>
+          <div className='company-title'>CarePal</div>
+        </div> 
+        <div className='nav-bar-2'>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/carePortal" className="nav-link">Care Portal</Link>
+          <Link to="" className="nav-link">About</Link>
+          <Link to="" className="nav-link">FAQ</Link>
+          <Link to="" className="nav-link">Contact Us</Link>
+        </div>
+        <div className='nav-bar-3'>
+        <button className='login'>Login</button>
+        <button className='register'>Register</button>
+        </div>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/speech-recognition" element={<SpeechRecognitionPage />} />

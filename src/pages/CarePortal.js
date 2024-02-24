@@ -19,7 +19,7 @@ import "./CarePortal.css";
 
 export default function CarePortal() {
   return (
-    <div className="container mt-5">
+    <div className="container-mt-5">
       <h2 className="text-center mb-4 care-portal-header">
         <FontAwesomeIcon icon={faHeartbeat} /> Care Portal
       </h2>
