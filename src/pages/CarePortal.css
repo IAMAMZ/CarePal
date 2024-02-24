@@ -61,7 +61,8 @@
   }
   
   .wellbeing-card {
-    background-color: #87CEEB; /* Wellbeing card background color */
+    /* background-color: #87CEEB; Wellbeing card background color */
+    padding: 1em;
     border: 1px solid #003366; /* Border color */
     box-shadow: 0 0 10px rgba(0, 51, 102, 0.2); /* Box shadow */
   }
@@ -71,13 +72,14 @@
   }
   
   .wellbeing-button {
-    background-color: #FF6F61; /* Buttons and links color */
+    background-color: #003366; /* Buttons and links color */
     border: 1px solid #003366; /* Border color */
   }
   
   .reminders-card {
-    background-color: #9DC183; /* Reminders card background color */
+    /* background-color: #9DC183; Reminders card background color */
     border: 1px solid #003366; /* Border color */
+    padding: 1em;
     box-shadow: 0 0 10px rgba(0, 51, 102, 0.2); /* Box shadow */
   }
   
@@ -90,7 +92,7 @@
   }
   
   .reminders-button {
-    background-color: #FF6F61; /* Buttons and links color */
+    background-color: #003366; /* Buttons and links color */
     border: 1px solid #003366; /* Border color */
   }
   
