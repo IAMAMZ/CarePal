@@ -24,6 +24,7 @@ export default function CarePortal() {
   // Function to start speech recognition and update transcript state
   const startSpeechRecognition = () => {
     console.log("clicked microphone");
+    speakText("hey how was your day?");
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     let recognition = new SpeechRecognition();
@@ -42,7 +43,7 @@ export default function CarePortal() {
 
       console.log("HLEKJFD" + transcribedText);
       // pass trascribed text to the model
-      const result = await fetch("http://localhost:3001/", {
+      const result = await fetch("http://localhost:3001/mentalHealth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Indicate that we're sending JSON data
@@ -58,7 +59,7 @@ export default function CarePortal() {
       console.log("Server response:", data);
 
       // Assuming the server sends back a JSON object that you want to speak
-      speakText("Server says " + data.message); // Use the parsed datan
+      speakText("Care Pal says " + data.message); // Use the parsed datan
     };
 
     recognition.start();
