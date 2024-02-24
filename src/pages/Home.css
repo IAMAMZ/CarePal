@@ -1,9 +1,9 @@
 .home-page{
     background-color: #edede8;
-    width: 100%t;
+    width: 100%;
 }
 .home-nav{
-    background-color: #003366;
+    background-color: #87CEEB;
     display: flex;
     padding: 2em 4em;
     justify-content: space-between;
@@ -22,7 +22,7 @@
     justify-content: space-between;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 0.8em;
+    padding-top: 3.5em;
 }
 
 .nav-link{
@@ -34,12 +34,13 @@
     display: flex;
     width: 15%;
     justify-content: space-between;
+    padding-top: 1.9em;
 }
 
 .login{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #003366;
+    background-color: #87CEEB;
     border: none;
     text-decoration: none;
     display: inline-block;
@@ -59,7 +60,7 @@
 }
 
 .start-section{
-    height: 20em;
+    height: 29em;
     background-color:white;
     display: flex;
     flex-direction: column;
@@ -112,8 +113,9 @@
 .features{
     display: flex;
     flex-direction: column;
-    padding: 2em 4em;
-    background-color:#4f7cad;
+    padding: 3em 4em;
+    /* background-color:#4f7cad; */
+    background-color: #87CEEB;
 }
 
 .key-features{
@@ -121,7 +123,7 @@
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .feature-description{
@@ -130,7 +132,7 @@
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .all-features{
@@ -140,7 +142,7 @@
 
 .feature-1{
     background-color:#003366;
-    width: 35%;
+    width: 44%;
     border: none;
     padding: 50px;
     margin: 20px 70px 20px 40px;
@@ -159,7 +161,7 @@
 
 .feature-2{
     background-color:#003366;
-    width: 35%;
+    width: 44%;
     border: none;
     padding: 50px;
     margin: 20px;
@@ -178,7 +180,7 @@
 
 .feature-3{
     background-color:#003366;
-    width: 35%;
+    width: 44%;
     border: none;
     padding: 50px;
     margin: 20px 70px 20px 40px;
@@ -197,7 +199,7 @@
 
 .feature-4{
     background-color:#003366;
-    width: 35%;
+    width: 44%;
     border: none;
     padding: 50px;
     margin: 20px;
@@ -212,4 +214,119 @@
 
 .feature-4-content{
     padding-left: 1em;
+}
+
+.pricing{
+    height: 20em;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 15em; 
+}
+
+.price-headline{
+    font-size: 100%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 0em 4em;
+}
+
+.price-tagline{
+    font-size: 220%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.2em;
+}
+
+.price-subline{
+    font-size: 120%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.price-tiers{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tier-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px;
+    color: white;
+
+}
+
+.tier-1-heading{
+    font-size: 150%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-1-desc{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-1-price{
+    font-size: 280%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#003366;
+    width: 35%;
+    border: none;
+    padding: 50px;
+    margin: 20px;
+    color: white;
+}
+
+.tier-2-heading{
+    font-size: 150%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-1-benefits{
+    padding-top: 1em;
+}
+
+.tier-2-desc{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-2-price{
+    font-size: 280%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding-top: 0.4em;
+}
+
+.tier-2-benefits{
+    padding-top: 1em;
 }

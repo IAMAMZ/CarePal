@@ -9,6 +9,7 @@ export default function Home() {
         <div className='section-buttons'>
         <button className='get-started'>Get Started</button>
         <a className='learn-more'>Learn More →</a>
+        <link rel="icon" type="image/x-icon" href="./src/projectlogo.ico" />
         </div>
       </div>
       <div className='features'>
@@ -32,7 +33,37 @@ export default function Home() {
             <div className='feature-4-content'>Simplified design for seamless navigation, ensuring a stress-free experience for seniors.</div>
           </div>
         </div>
+      </div>
+      <div className='pricing'>
+        <div className='price-headline'>PRICING</div>
+        <div className='price-tagline'>Choose Your Plan</div>
+        <div className='price-subline'>Select the perfect plan that suits your needs</div>
+        <div className='price-tiers'>
+          <div className='tier-1'>
+            <div className='tier-1-heading'>Free</div>
+            <div className='tier-1-desc'>Our Free plan allows you to access basic features for no cost.</div>
+            <div className='tier-1-price'>Free</div>
+            <ul className='tier-1-benefits'>
+              <div>✔ Unlimited question responses</div>
+              <div>✔ Access to voice assistant chatbot</div>
+              <div>✔ Option to see sentiment analysis of your loved ones' responses</div>
+              <div>✔ Timely check up on your loved ones</div>
+              <div>✔ Reminders for your loved one's medicines and hospital check ups</div>
+            </ul>
+          </div>
+          <div className='tier-2'>
+            <div className='tier-2-heading'>Premium</div>
+            <div className='tier-2-desc'>Get the ultimate experience by upgrading to our Premium plan specially tailored for you.</div>
+            <div className='tier-2-price'>$55/month</div>
+            <ul className='tier-2-benefits'>
+              <div>✔ All features of FREE plan</div>
+              <div>✔ Priority customer support</div>
+              <div>✔ Option to share sentiment analysis reports to caregivers or PSWs</div>
+              <div>✔ Personalize AI companionship and entertainment</div>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
   );
 }
