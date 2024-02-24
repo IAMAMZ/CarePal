@@ -1,0 +1,88 @@
+/* CarePortal.css */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F5F5DC; /* Backdrop color */
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  .care-portal-header {
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  .wellbeing-card {
+    background-color: #87CEEB; /* Wellbeing card background color */
+    border: 1px solid #003366; /* Border color */
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.2); /* Box shadow */
+  }
+  
+  .wellbeing-header {
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  .wellbeing-button {
+    background-color: #FF6F61; /* Buttons and links color */
+    border: 1px solid #003366; /* Border color */
+  }
+  
+  .reminders-card {
+    background-color: #9DC183; /* Reminders card background color */
+    border: 1px solid #003366; /* Border color */
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.2); /* Box shadow */
+  }
+  
+  .reminders-header {
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  .reminders-input {
+    background-color: #F5F5DC; /* Backdrop color */
+  }
+  
+  .reminders-button {
+    background-color: #FF6F61; /* Buttons and links color */
+    border: 1px solid #003366; /* Border color */
+  }
+  
+  .reminders-info {
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  .reminders-list {
+    color: #003366; /* Navigation and headers color */
+  }
+  
+  /* Additional styling for FontAwesome icons */
+  .fa {
+    margin-right: 5px;
+  }
+  
+  /* Navbar.css */
+
+.navbar {
+    background-color: #9fccff; /* Navigation and headers color */
+    padding: 10px;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-item {
+    margin: 0;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: #F5F5DC; /* Backdrop color */
+    font-weight: bold;
+  }
+  
+  .navbar-item a:hover {
+    color: #87CEEB; /* Accent color */
+  }
+  
