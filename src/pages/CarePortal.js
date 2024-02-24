@@ -79,15 +79,15 @@ export default function CarePortal() {
 
   return (
     <div className="container-mt-5">
-      <h2 className="text-center mb-4 care-portal-header">
-        <FontAwesomeIcon icon={faHeartbeat} /> Care Portal
+      <h2 className="text-center mb-4 care-portal-header" id="header-portal">
+         Care Portal
       </h2>
 
       <div className="row">
         <div className="col-md-6">
-          <div className="card p-4 wellbeing-card card-item-custom">
+          <div className="card wellbeing-card card-item-custom" id="card-size">
             <h2 className="text-center mb-4 wellbeing-header">
-              <FontAwesomeIcon icon={faSmile} /> Wellbeing Functions
+            <FontAwesomeIcon icon={faHeartbeat} /> Wellbeing Functions
             </h2>
             <button className="btn btn-primary btn-block mb-2 wellbeing-button">
               <FontAwesomeIcon icon={faLaugh} /> Send a Joke
@@ -112,7 +112,7 @@ export default function CarePortal() {
         </div>
 
         <div className="col-md-6 ">
-          <div className="card p-4 reminders-card card-item-custom">
+          <div className="card reminders-card card-item-custom" id="card-size1" >
             <h2 className="text-center mb-4 reminders-header">
               <FontAwesomeIcon icon={faBell} /> Reminders
             </h2>

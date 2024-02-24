@@ -5,7 +5,7 @@
 .home-nav{
     background-color: #87CEEB;
     display: flex;
-    padding: 2em 4em;
+    padding: 0em 4em;
     justify-content: space-between;
 }
 
@@ -22,7 +22,7 @@
     justify-content: space-between;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 3.5em;
+    padding-top: 2.5em;
 }
 
 .nav-link{
@@ -34,7 +34,7 @@
     display: flex;
     width: 15%;
     justify-content: space-between;
-    padding-top: 1.9em;
+    padding-top: 1em;
 }
 
 .login{
@@ -45,6 +45,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-bottom: 1em;
 }
 
 .register{
@@ -57,6 +58,7 @@
     display: inline-block;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1em;
 }
 
 .start-section{
@@ -142,7 +144,7 @@
 
 .feature-1{
     background-color:#003366;
-    width: 44%;
+    width: 43%;
     border: none;
     padding: 50px;
     margin: 20px 70px 20px 40px;
@@ -161,7 +163,7 @@
 
 .feature-2{
     background-color:#003366;
-    width: 44%;
+    width: 43%;
     border: none;
     padding: 50px;
     margin: 20px;
@@ -180,7 +182,7 @@
 
 .feature-3{
     background-color:#003366;
-    width: 44%;
+    width: 43%;
     border: none;
     padding: 50px;
     margin: 20px 70px 20px 40px;
@@ -199,7 +201,7 @@
 
 .feature-4{
     background-color:#003366;
-    width: 44%;
+    width: 43%;
     border: none;
     padding: 50px;
     margin: 20px;
