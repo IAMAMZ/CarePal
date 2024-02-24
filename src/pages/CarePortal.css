@@ -5,6 +5,12 @@ body {
     background-color: #F5F5DC; /* Backdrop color */
     color: #003366; /* Navigation and headers color */
   }
+  .card-item-custom{
+    height: 400px;
+  }
+
+
+ 
   
   .care-portal-header {
     color: #003366; /* Navigation and headers color */
